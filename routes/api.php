@@ -9,6 +9,6 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::group(['prefix' => 'adines/hs'], function () {
-    Route::post('/auth', [AdinesController::class, 'auth']);
+    Route::get('/auth', [AdinesController::class, 'auth']);
     Route::resource('/product', AdinesController::class);
 });
