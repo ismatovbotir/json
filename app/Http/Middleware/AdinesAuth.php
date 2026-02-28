@@ -31,8 +31,8 @@ class AdinesAuth
         [$username, $password] = explode(':', $decoded, 2);
 
         // 👇 Заменить на свои значения
-        $validUser = config('adines.username');
-        $validPass = config('adines.password');
+        $validUser = "Admin";
+        $validPass = "Admin";
 
         if ($username !== $validUser || $password !== $validPass) {
             return response()->json([
