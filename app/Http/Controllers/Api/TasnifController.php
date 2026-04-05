@@ -95,12 +95,14 @@ class TasnifController extends Controller
                 'https://tasnif.soliq.uz/api/cl-api/integration-mxik/get/information',
                 $request->query()
             );
-
         return response(
-            $response->body(),
-            $response->status(),
-            ['Content-Type' => $response->header('Content-Type', 'application/json')]
+            $request->query()
         );
+        // return response(
+        //     $response->body(),
+        //     $response->status(),
+        //     ['Content-Type' => $response->header('Content-Type', 'application/json')]
+        // );
     }
     public function HistoryTime(Request $request)
     {
