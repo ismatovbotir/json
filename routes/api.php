@@ -15,6 +15,6 @@ Route::group(['prefix' => 'adines/hs', 'middleware' => 'adines.auth'], function 
 });
 Route::group(['prefix' => 'cl-api',], function () {
     Route::get('/integration-mxik/get/all/history/time', [TasnifController::class, 'AllHistoryTime']);
-    Route::get('/integration-mxik/get/information', [TasnifController::class, 'Information']);
+    Route::get('/integration-mxik/get/information/', [TasnifController::class, 'Information']);
     Route::get('/integration-mxik/get/history/time', [TasnifController::class, 'HistoryTime']);
 });
