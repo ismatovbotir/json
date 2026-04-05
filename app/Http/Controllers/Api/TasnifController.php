@@ -118,4 +118,18 @@ class TasnifController extends Controller
             ['Content-Type' => $response->header('Content-Type', 'application/json')]
         );
     }
+    public function AllHistoryTimeJson(Request $request)
+    {
+        $response = Http::acceptJson()
+            ->get(
+                'https://tasnif.soliq.uz/api/cl-api/integration-mxik/get/all/history/time-json',
+                $request->query()
+            );
+
+        return response(
+            $response->body(),
+            $response->status(),
+            ['Content-Type' => $response->header('Content-Type', 'application/json')]
+        );
+    }
 }
