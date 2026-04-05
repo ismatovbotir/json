@@ -88,4 +88,32 @@ class TasnifController extends Controller
             ['Content-Type' => $response->header('Content-Type', 'application/json')]
         );
     }
+    public function Information(Request $request)
+    {
+        $response = Http::acceptJson()
+            ->get(
+                'https://tasnif.soliq.uz/api/cl-api/integration-mxik/get/information',
+                $request->query()
+            );
+
+        return response(
+            $response->body(),
+            $response->status(),
+            ['Content-Type' => $response->header('Content-Type', 'application/json')]
+        );
+    }
+    public function HistoryTime(Request $request)
+    {
+        $response = Http::acceptJson()
+            ->get(
+                'https://tasnif.soliq.uz/api/cl-api/integration-mxik/get/history/time',
+                $request->query()
+            );
+
+        return response(
+            $response->body(),
+            $response->status(),
+            ['Content-Type' => $response->header('Content-Type', 'application/json')]
+        );
+    }
 }
