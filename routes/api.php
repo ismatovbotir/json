@@ -19,3 +19,6 @@ Route::group(['prefix' => 'cl-api',], function () {
     Route::get('/integration-mxik/get/history/time', [TasnifController::class, 'HistoryTime']);
     Route::get('/integration-mxik/get/all/history/time-json', [TasnifController::class, 'AllHistoryTimeJson']);
 });
+Route::group(['prefix' => 'cls-api',], function () {
+    Route::get('/mxik/get/by-mxik', [TasnifController::class, 'ByMxik']);
+});

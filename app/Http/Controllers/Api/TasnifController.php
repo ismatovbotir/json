@@ -132,4 +132,18 @@ class TasnifController extends Controller
             ['Content-Type' => $response->header('Content-Type', 'application/json')]
         );
     }
+    public function ByMxik(Request $request)
+    {
+        $response = Http::acceptJson()
+            ->get(
+                'https://tasnif.soliq.uz/api/cls-api/mxik/get/by-mxik',
+                $request->query()
+            );
+
+        return response(
+            $response->body(),
+            $response->status(),
+            ['Content-Type' => $response->header('Content-Type', 'application/json')]
+        );
+    }
 }
